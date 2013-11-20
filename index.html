@@ -1,183 +1,39 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
-<head>
+---
+layout: default
+title: US Food and Drug Administration Data
+overview: true
+---  
   
-    <meta charset="UTF-8">
-  
-    <title>Court Opinion API</title>
- 
-    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-    <script src="http://api.1.ongithub.com/js/mustache.js" type="text/javascript"></script> 
- 
-    <link href="http://api.1.ongithub.com/css/style.css" rel="stylesheet" type="text/css" media="all">
-    
-    <style type="text/css">
-    
-    #logo .site-title, #logo .site-description { display:block; }
-    body {background-repeat:no-repeat;background-position:top center;border-top:4px solid #000000;}
-    #header {background-repeat:repeat;background-position:top center;margin-top:0px;margin-bottom:0px;padding-top:20px;padding-bottom:15px;border:0px solid ;}
-    #logo .site-title a {font:normal 40px/1em Georgia, serif;color:#222222}
-    #logo .site-description {font:italic 14px/1em Georgia, serif;color:#999999}
-    #logo .site-title a {font:normal 40px/1em Georgia, serif;color:#222222}
-    #logo .site-description {font:italic 14px/1em Georgia, serif;color:#999999}
-    body, p {font:normal 14px/1.5em Arial, sans-serif;color:#555555}
-    h1 {font:normal 28px/1.5em Georgia, serif;color:#222222}h2 {font:normal 24px/1.5em Georgia, serif;color:#222222}h3 {font:normal 20px/1.5em Georgia, serif;color:#222222}h4 {font:normal 16px/1.5em Georgia, serif;color:#222222}h5 {font:normal 14px/1.5em Georgia, serif;color:#222222}h6 {font:normal 12px/1.5em Georgia, serif;color:#222222}
-    .post .title, .page .title, .post .title a:link, .post .title a:visited, .page .title a:link, .page .title a:visited {font:bold 20px/1.2em Arial, sans-serif;color:#222222; padding-bottom: 15px;}
-    .entry, .entry p{font:normal 14px/1.5em Georgia, serif;color:#555555}
-    .post-more {font:normal 12px/1.5em Arial, sans-serif;color:#868686;border-top:4px solid #e6e6e6;border-bottom:1px solid #e6e6e6;}
-    .nav-entries, .wp-pagenavi {border-top:1px solid #e6e6e6;border-bottom:4px solid #e6e6e6;}
-    .nav-entries a, .wp-pagenavi a:link, .wp-pagenavi a:visited, .wp-pagenavi .current, .wp-pagenavi .on, .wp-pagenavi a:hover, .wp-pagenavi span.extend, .wp-pagenavi span.pages {font:italic 12px/1.5em Georgia, serif;color:#777777!important}
-    .wp-pagenavi a:link, .wp-pagenavi a:visited, .wp-pagenavi span.extend, .wp-pagenavi span.pages, .wp-pagenavi span.current {color:#777777!important}
-    
-    .widget h3 {font:bold 14px/1.5em Arial, sans-serif;color:#555555;border-bottom:3px solid #e6e6e6;}
-    .widget_recent_comments li, #twitter li { border-color: #e6e6e6;}
-    
-    .widget p, .widget .textwidget {font:normal 12px/1.5em Arial, sans-serif;color:#555555;}
-    .widget {font:normal 12px/1.5em Arial, sans-serif;color:#555555;border-radius:0px;-moz-border-radius:0px;-webkit-border-radius:0px;}
-    
-    .widget ul{
-        margin-left: 35px;
-        list-style: disc;
-    }
-    
-    .nav a, #navigation ul.rss a {font:normal 14px Arial, sans-serif;color:#555555}
-    #navigation {border-top:1px solid #dbdbdb;border-bottom:4px solid #dbdbdb;border-left:0px solid #dbdbdb;border-right:0px solid #dbdbdb;border-radius:0px; -moz-border-radius:0px; -webkit-border-radius:0px;}
-    #footer, #footer p {font:italic 14px Georgia, serif;color:#777777}
-    #footer {border-top:4px solid #dbdbdb;border-bottom:0px solid ;border-left:0px solid ;border-right:0px solid ;border-radius:0px; -moz-border-radius:0px; -webkit-border-radius:0px;}
-    
-    .bodycontent{
-        margin: 8px 0 8px 40px;
-        padding: 0px 0px 0px 0px;
-        }
-        
-     p
-        {
-        padding: 2px;   
-        }
-  
-    </style>     
-    
-    <link rel="stylesheet" type="text/css" href="http://api.1.ongithub.com/css/swagger.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="http://api.1.ongithub.com/css/hightlight.default.css" media="screen" />                        
-    
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
-    <script src='http://api.1.ongithub.com/js/shred.bundle.js' type='text/javascript' /></script>
-    <script src='http://api.1.ongithub.com/js/jquery-1.8.0.min.js' type='text/javascript'></script>
-    <script src='http://api.1.ongithub.com/js/jquery.slideto.min.js' type='text/javascript'></script>
-    <script src='http://api.1.ongithub.com/js/jquery.wiggle.min.js' type='text/javascript'></script>
-    <script src='http://api.1.ongithub.com/js/jquery.ba-bbq.min.js' type='text/javascript'></script>
-    <script src='http://api.1.ongithub.com/js/handlebars-1.0.rc.1.js' type='text/javascript'></script>
-    <script src='http://api.1.ongithub.com/js/underscore-min.js' type='text/javascript'></script>
-    <script src='http://api.1.ongithub.com/js/backbone-min.js' type='text/javascript'></script>
-    <script src='http://api.1.ongithub.com/js/swagger.js' type='text/javascript'></script>
-    <script src='http://api.1.ongithub.com/js/swagger-ui.js' type='text/javascript'></script>
-    <script src='http://api.1.ongithub.com/js/highlight.7.3.pack.js' type='text/javascript'></script>
-    <script src='http://api.1.ongithub.com/js/mustache.js' type='text/javascript'></script>
-    <script src='http://api.1.ongithub.com/js/injector.js' type='text/javascript'></script>
-    <script src='http://api.1.ongithub.com/js/utilities.js' type='text/javascript'></script>  
-   
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-           
-    <script type="text/javascript">
-    
-        var $Path = 'http://kinlane.github.io/court-listener/api.json';
-    
-        $(function () {
-            window.swaggerUi = new SwaggerUi({
-                url: $Path,
-                dom_id: "swagger-ui-container",
-                supportedSubmitMethods: ['get'],
-                onComplete: function(swaggerApi, swaggerUi){
-                if(console) {
-                    console.log("Loaded SwaggerUI")
-                    }
-            
-                $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
-                },
-                onFailure: function(data) {
-                if(console) {
-                    console.log("Unable to Load SwaggerUI");
-                    console.log(data);
-                    }
-                },
-                docExpansion: "none"
-            });
-            
-            window.authorizations.add("Basic", new ApiKeyAuthorization("basic_auth", 'kinlane', 'l3tm3in'));    
-            
-            window.swaggerUi.load();      
-            
-        });
-    </script>     
-  
-</head>
-
-<body class="home blog two-col-left width-940 two-col-left-940">
-    
-    <a href="http://kinlane.github.io/court-listener/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
-    <div id="wrapper">
-        
-        <div id="header" class="col-full">
-            <div id="logo"><a href="http://kinlane.github.io/court-listener/" title="Opinion API"><img src="https://s3.amazonaws.com/kinlane-productions/api-on-github/api-on-github-logo.png" width="450" /></a></div> 
-        </div>
-        
-        <div id="navigation" class="col-full">
-            <ul id="main-nav" class="nav fl">
-                <li class="page_item page-item-2"><a href="index.html" title="Home">Home</a></li>
-            </ul>
-            <ul class="rss fr">
-                
-            </ul>
-        </div>
-        
-        <div id="content" class="col-full">
-            <div id="main-sidebar-container">
-                
-                <div id="main">   
-                       
-                    <div class="post-1 post type-post hentry category-api-marketplace category-uncategorized"> 
-                        
-                        <h1>Court Opinion API - 55</h1>
-                        <p>This is a working opinions API.</p> 
-                        
-                        <div class="swagger-shell" style="width: 600px;"> 
-                            <div id="swagger-ui-container" class="swagger-ui-wrap">
-                                
-                            </div>
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-                
-                <div id="sidebar">
-                    
-                    <div class="widget widget_recent_entries">  
-                        
-                        <h3>Court Opinion API</h3>
-                        <ul>                
-                            <li><a href="http://ongithub.github.io/nothing/">Nothing</a></li>    
-                        </ul>
-                        
-                    </div>  
-                                                                 
-                </div>
-                
-            </div>
-        </div>
-        
-        <div id="footer" class="col-full">
-            <div id="copyright" class="col-left">
-                <p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></p>        
-            </div>
-            <div id="credit" class="col-right">
-                
-            </div>
-        </div>
+<h1>Court Opinion API</h1>
+<p>This is a working project to show was is possibile with the <a href="https://www.courtlistener.com/api/rest-info/" target="_blank">Free Law Project's Court Opinion API</a>.</p> 
+<p>I'm work on a Swagger API definition for the API, server and client side tooling as well.</p>
+<p>Currently this runs through an API proxy at court.listener.api.publicprivatesector.org so I can use CORS, I'm also using API keys instead of Basic Auth so I can provide analytics on usage, you can register over at <a href="https://apievangelist.3scale.net/">API Evangelist API</a>. The API is not listed in documentation, but the keys you are issued will work.</p>
+<div class="swagger-shell" style="width: 600px;"> 
+    <div id="swagger-ui-container" class="swagger-ui-wrap">
         
     </div>
-                 
-</body>
-</html>
+</div>
+
+<hr />
+<!-- 3scale -->
+<p align="center">
+<a href="http://bit.ly/13esk6Q" target="_blank" title="APIs From 3Scale">
+    <img src="https://s3.amazonaws.com/kinlane-productions/api-service-providers/3Scale/empowered-by-3scale.png" width="300" style="padding-bottom: 15px;" />
+</a>        
+</p>  
+<hr />
+
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'publicprivatesector'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
