@@ -4,7 +4,7 @@
 	"apis": [
 		{
 			"name": "opinions",
-			"path": "kinlane.github.io/court-listener/opinions",
+			"path": "http://kinlane.github.io/court-listener/opinions",
 			"description": ""
 		}
 	]
