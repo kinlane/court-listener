@@ -43,51 +43,10 @@
         "events": {
             "id": "events",
             "properties": {
-                "id": {
-                    "type": "integer"
+                "meta": {
+                    "type": "array"
                 },              
-                "name": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "url": {
-                    "type": "string"
-                },
-                "image": {
-                    "type": "string"
-                },
-                "duration": {
-                    "type": "string"
-                },
-                "startDate": {
-                    "type": "dateTime"
-                },
-                "endDate": {
-                    "type": "dateTime"
-                },
-                "location": {
-                    "type": "string"
-                },
-                "streetAddress": {
-                    "type": "string"
-                },
-                "addressLocality": {
-                    "type": "string"
-                },
-                "addressRegion": {
-                    "type": "string"
-                },
-                "postalCode": {
-                    "type": "string"
-                },
-                "telephone": {
-                    "type": "string"
-                },
-                "email": {
-                    "type": "string"
-                }                                      
+                                     
             }
         }
     }
