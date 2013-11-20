@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
   <meta charset="UTF-8">
-  <title>FDA - Data</title>
+  <title>Free Law Project - Court Opinion API</title>
   
 
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
@@ -121,5 +121,56 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    
+    <script type="text/javascript">
+    
+        var $Path = 'http://laneworks.net/opinion-api/api.json';
+    
+        $(function () {
+            window.swaggerUi = new SwaggerUi({
+                url: $Path,
+                dom_id: "swagger-ui-container",
+                supportedSubmitMethods: ['get'],             
+                onComplete: function(swaggerApi, swaggerUi){
+                if(console) {
+                    console.log("Loaded SwaggerUI")
+                    }
+            
+                $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
+                },
+                onFailure: function(data) {
+                if(console) {
+                    console.log("Unable to Load SwaggerUI");
+                    console.log(data);
+                    }
+                },
+                docExpansion: "none"
+            });         
+
+            window.swaggerUi.load(); 
+           
+        // Auto set the AppID and AppKey              
+        $appid = getUrlVar('appid');
+        //alert($appid);      
+        if($appid!='')
+             {
+            object = document.getElementsByTagName('input');   
+            $.each(object, function(index, item) {
+                 //alert(dodump(item.name + ' = ' + item.value));
+                 if(item.name == 'appid'){ item.value = $appid; }
+            }); 
+            }   
+        $appkey = getUrlVar('appkey');  
+        //alert($appkey);       
+        if($appkey!='')
+             {
+            object = document.getElementsByTagName('input');   
+            $.each(object, function(index, item) {
+                 //alert(dodump(item.name + ' = ' + item.value));
+                 if(item.name == 'appkey'){ item.value = $appkey; }
+            }); 
+            }                        
+        });
+    </script>     
     
 </head>
