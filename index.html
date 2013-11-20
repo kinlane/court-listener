@@ -105,7 +105,7 @@
                 docExpansion: "none"
             });
             
-            window.authorizations.add("Basic",new PasswordAuthorization("basic_auth", 'kinlane', 'l3tm3in'));    
+            window.authorizations.add("Basic", new ApiKeyAuthorization("basic_auth", 'kinlane', 'l3tm3in'));    
             
             window.swaggerUi.load();      
             
