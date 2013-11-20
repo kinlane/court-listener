@@ -2,13 +2,13 @@
   "apiVersion": "1.0",
   "swaggerVersion": "1.2",
   "basePath": "https://www.courtlistener.com/api/rest/v1",
-  "resourcePath": "/opinions",
+  "resourcePath": "/opinion",
   "produces": [
     "application/json"
   ],
   "apis": [
     {
-      "path": "/opinions/",
+      "path": "/opinion/",
       "operations": [
         {
           "method": "GET",
