@@ -24,7 +24,7 @@
               "allowMultiple": false,
               "dataType": "string",
               "paramType": "query"
-            }                      
+            }
           ],
           "produces": [
             "application/json"
@@ -40,10 +40,138 @@
     }
   ],
   "models": {
-    "events": {
-      "id": "events",
+    "opinions": {
+      "id": "objects",
       "properties": {
-        "meta": {
+        "absolute_url": {
+          "type": "string"
+        },
+        "blocked": {
+          "type": "boolean"
+        },
+        "citation": {
+          "type": "array",
+          "items": {
+            "$ref": "citation"
+          }
+        },
+        "citation_count": {
+          "type": "integer"
+        },
+        "court": {
+          "type": "string"
+        },
+        "date_blocked": {
+          "type": "date"
+        },
+        "date_filed": {
+          "type": "date"
+        },
+        "date_modified": {
+          "type": "date"
+        },
+        "download_URL": {
+          "type": "string"
+        },
+        "extracted_by_ocr": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "judges": {
+          "type": "string"
+        },
+        "local_path": {
+          "type": "string"
+        },
+        "nature_of_suit": {
+          "type": "string"
+        },
+        "pagerank": {
+          "type": "long"
+        },
+        "precedential_status": {
+          "type": "string"
+        },
+        "resource_uri": {
+          "type": "string"
+        },
+        "sha1": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "time_retrieved": {
+          "type": "date"
+        }
+      }
+    },
+    "citation": {
+      "id": "objects",
+      "properties": {
+        "absolute_url": {
+          "type": "string"
+        },
+        "blocked": {
+          "type": "boolean"
+        },
+        "citation": {
+          "type": "array",
+          "items": {
+            "$ref": "Type"
+          }
+        },
+        "case_name": {
+          "type": "string"
+        },
+        "docket_number": {
+          "type": "string"
+        },
+        "federal_cite_one": {
+          "type": "string"
+        },
+        "federal_cite_three": {
+          "type": "string"
+        },
+        "federal_cite_two": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "lexis_cite": {
+          "type": "string"
+        },
+        "neutral_cite": {
+          "type": "string"
+        },
+        "opinion_uris": {
+          "type": "array"
+        },
+        "resource_uri": {
+          "type": "string"
+        },
+        "scotus_early_cite": {
+          "type": "string"
+        },
+        "specialty_cite_one": {
+          "type": "string"
+        },
+        "state_cite_one": {
+          "type": "string"
+        },
+        "state_cite_regional": {
+          "type": "string"
+        },
+        "state_cite_three": {
+          "type": "string"
+        },
+        "state_cite_two": {
+          "type": "string"
+        },
+        "westlaw_cite": {
           "type": "string"
         }
       }
