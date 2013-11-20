@@ -19,7 +19,7 @@
           "parameters": [
             {
               "name": "format",
-              "description": "format for response",
+              "description": "format of the response",
               "required": false,
               "allowMultiple": false,
               "dataType": "string",
