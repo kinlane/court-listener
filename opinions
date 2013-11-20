@@ -1,0 +1,94 @@
+{
+    "apiVersion": "1.0",
+    "swaggerVersion": "1.2",
+    "basePath": "https://www.courtlistener.com/api/rest/v1/",
+    "resourcePath": "/opinions",
+    "produces": [
+        "application/json"
+    ],
+    "apis": [
+        {
+            "path": "/opinions/",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Pulls a opinions",
+                    "notes": "Returns opinions",
+                    "nickname": "getOpinion",
+                    "type": "opinions",
+                    "parameters": [
+                        {
+                            "name": "format",
+                            "description": "format for response",
+                            "required": false,
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "query"
+                        }
+                    ],
+                    "produces": [
+                        "application/json"
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 404,
+                            "message": "No Opinions To Return"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+        "events": {
+            "id": "events",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },              
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "string"
+                },
+                "duration": {
+                    "type": "string"
+                },
+                "startDate": {
+                    "type": "dateTime"
+                },
+                "endDate": {
+                    "type": "dateTime"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "streetAddress": {
+                    "type": "string"
+                },
+                "addressLocality": {
+                    "type": "string"
+                },
+                "addressRegion": {
+                    "type": "string"
+                },
+                "postalCode": {
+                    "type": "string"
+                },
+                "telephone": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                }                                      
+            }
+        }
+    }
+}
