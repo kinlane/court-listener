@@ -104,7 +104,11 @@
                 },
                 docExpansion: "none"
             });
-            window.swaggerUi.load();
+            
+            window.authorizations.add("Basic",new PasswordAuthorization("basic_auth", 'kinlane', 'l3tm3in'));    
+            
+            window.swaggerUi.load();      
+            
         });
     </script>     
   
@@ -135,7 +139,7 @@
                        
                     <div class="post-1 post type-post hentry category-api-marketplace category-uncategorized"> 
                         
-                        <h1>Court Opinion API - 33</h1>
+                        <h1>Court Opinion API - 44</h1>
                         <p>This is a working opinions API.</p> 
                         
                         <div class="swagger-shell" style="width: 600px;"> 
