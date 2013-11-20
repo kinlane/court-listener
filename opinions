@@ -24,7 +24,15 @@
               "allowMultiple": false,
               "dataType": "string",
               "paramType": "query"
-            }
+            },
+            {
+              "name": "Authorization",
+              "description": "format for response",
+              "required": false,
+              "allowMultiple": false,
+              "dataType": "string",
+              "paramType": "header"
+            }                       
           ],
           "produces": [
             "application/json"
