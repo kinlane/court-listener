@@ -4,6 +4,7 @@
   "basePath": "http://court.listener.api.publicprivatesector.org/api/rest/v1",
   "resourcePath": "/",
   "produces": [
+    "application/xml",
     "application/json"
   ],
   "apis": [
