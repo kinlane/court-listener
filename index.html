@@ -4,6 +4,61 @@ title: Free Law Project - Court Opinion API
 overview: true
 ---  
   
+<script type="text/javascript">
+
+    var $Path = '/court-listener-api/api.json';
+
+    $(function () {
+        window.swaggerUi = new SwaggerUi({
+            url: $Path,
+            dom_id: "swagger-ui-container",
+            supportedSubmitMethods: ['get'],             
+            onComplete: function(swaggerApi, swaggerUi){
+            if(console) {
+                console.log("Loaded SwaggerUI")
+                }
+        
+            $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
+            },
+            onFailure: function(data) {
+            if(console) {
+                console.log("Unable to Load SwaggerUI");
+                console.log(data);
+                }
+            },
+            docExpansion: "none"
+        });         
+
+        window.swaggerUi.load(); 
+                              
+    });
+    
+    function setKeys()
+        {
+        // Auto set the AppID and AppKey              
+        $appid = getUrlVar('appid');
+        //alert($appid);      
+        if($appid!='')
+             {
+            object = document.getElementsByTagName('input');   
+            $.each(object, function(index, item) {
+                 //alert(dodump(item.name + ' = ' + item.value));
+                 if(item.name == 'appid'){ item.value = $appid; }
+            }); 
+            }   
+        $appkey = getUrlVar('appkey');  
+        //alert($appkey);       
+        if($appkey!='')
+             {
+            object = document.getElementsByTagName('input');   
+            $.each(object, function(index, item) {
+                // alert(dodump(item.name + ' = ' + item.value));
+                 if(item.name == 'appkey'){ item.value = $appkey; }
+            }); 
+            }                
+        }
+</script>  
+  
 <h1>Free Law Project - Court Opinion API</h1>
 <p>This is a working project to show was is possibile with the <a href="https://www.courtlistener.com/api/rest-info/" target="_blank">Free Law Project's Court Opinion API</a>.</p> 
 <p>I'm working on a Swagger API definition for the API, as well as server and client side tooling in a variety of lagnuages. I will also create implementations that run on AWS and OpenShift.</p>
