@@ -1,0 +1,51 @@
+{
+  "name": "Free Law Project - Court Listener API",
+  "description": "This is a working project to show was is possibile with the Free Law Project's Court Listener API.",
+  "image": "https://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png",
+  "url": "http://kinlane.github.io/court-listener-api/",
+  "created": "04/07/2014",
+  "modified": "04/07/2014",
+  "specificationversion": "0.14",  
+  "apis": [
+    {
+      "name": "Products",
+      "description": "Provides access to products available in the system.",
+      "image": "https://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png",
+      "humanUrl": "http://kinlane.github.io/court-listener-api/",
+      "baseUrl": "http://kinlane.github.io/court-listener/opinions",
+      "tags": "court, legal, opinion",
+      "properties": [
+        {
+          "type": "swagger",
+          "url": "http://kinlane.github.io/court-listener/opinions"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "API Evangliest",
+          "email": "info@apievangelist.com",
+          "X-twitter": "apievangelist"
+        }
+      ]
+    }
+  ],
+  "include": [
+    {
+      "name": "API Evangelist",
+      "url": "http://apievangelist.com/api.json"
+    },
+    {
+      "type": "API Commons",
+      "url": "http://apicommons.org/api.json"
+    }
+  ],
+  "maintainer": [
+    {
+      "name": "Kin",
+      "twitter": "apievangelist",
+      "email": "kin@email.com"
+    }
+  ],
+  "tags": "court, legal, opinion",
+  "modified": "04/07/2014"
+}
